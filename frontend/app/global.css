@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@import "@radix-ui/themes/styles.css";
+
+
+@layer utilities {
+    .text-fluid-xs   { font-size: clamp(0.650rem, 1vw, 0.75rem); }
+  .text-fluid-sm   { font-size: clamp(0.75rem, 1.5vw, 0.875rem); }
+  .text-fluid-base { font-size: clamp(0.875rem, 2vw, 1rem); }
+  .text-fluid-lg   { font-size: clamp(1rem, 2.5vw, 1.25rem); }
+  .text-fluid-xl   { font-size: clamp(1.1rem, 3vw, 1.35rem); }
+  .text-fluid-2xl  { font-size: clamp(1.5rem, 4vw, 2rem); }
+  .text-fluid-4xl  { font-size: clamp(1.5rem, 4vw, 2rem); }
+}
+
+@layer base {
+  :root {
+    --primary-color: #5e6061;
+    --secondary-color: #6b7280; /* Gray-500 */
+    --font-family: "Inter", sans-serif;
+    --max-width: 672px;
+    --page-spacing: 1.5rem; /* this is for page padding which is applied on both sides */
+  }
+  * {
+    /* padding: 0;
+    margin: 0; */
+    box-sizing: border-box; /* this ensures that padding and border are included in the total width and height of elements */
+  }
+}
+body {
+  padding-top: 4rem; /* adjust based on your navbar height */
+  font-family: var(--font-family);
+  background-color: #f7f6f6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+.page-wrapper {
+  max-width: var(--max-width);
+  margin-inline: auto; /*this apply the auto margin on both sides to center the page wrapper */
+  padding-inline: var(
+    --page-spacing
+  ); /* this applies the horizontal padding to the page wrapper */
+  padding-block: 1.5rem;
+}
