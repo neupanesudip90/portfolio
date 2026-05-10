@@ -1,14 +1,12 @@
-import { div } from "framer-motion/client";
 import { FcGraduationCap } from "react-icons/fc";
 
 export default function Education() {
   return (
-    <div>
     <div className="mt-10">
       <p className="text-fluid-xs uppercase tracking-widest text-gray-500 font-semibold mb-6">
         education
       </p>
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-3">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-4">
             <FcGraduationCap className="w-6 h-6" />
@@ -41,8 +39,6 @@ export default function Education() {
         </div>
       </div>
           </div>
-
-    </div>
   );
 
   
