@@ -9,18 +9,28 @@ export function useVisitorCount() {
   useEffect(() => {
     const run = async () => {
       try {
-        console.log("🔥 Firebase connecting...");
         const ref = doc(db, "stats", "visitors");
-        await setDoc(ref, { count: increment(1) }, { merge: true });
-        console.log("✅ Count incremented!");
+
+        // Check if already counted in this session
+        const alreadyCounted = sessionStorage.getItem("visited");
+
+        if (!alreadyCounted) {
+          // First visit — increment count
+          await setDoc(ref, { count: increment(1) }, { merge: true });
+          sessionStorage.setItem("visited", "true");
+          console.log("✅ New visit counted!");
+        } else {
+          console.log("👀 Already counted this session, just reading...");
+        }
+
+        // Always read and show the count
         const snap = await getDoc(ref);
-        console.log("📊 Count value:", snap.data());
         const data = snap.data();
         if (data) {
           setCount(data.count);
         }
       } catch (err: any) {
-        console.error("Firebase error:", err.message);
+        console.error("❌ Firebase error:", err.message);
       }
     };
     run();
