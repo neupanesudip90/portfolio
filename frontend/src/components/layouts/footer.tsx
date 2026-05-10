@@ -200,9 +200,12 @@ export const Footer = () => {
           </p>
 
           {count && (
-            <p className="text-fluid-xs text-gray-600">
-              <span className="inline-block animate-wave">👋</span> You are the{" "}
-              <span className="font-bold text-gray-800"><AnimatedNumber value={count} /></span> th visitor!
+            <p className="text-fluid-sm text-gray-600">
+              <span className="inline-block animate-wave ">👋</span> You are the{" "}
+              <span className="font-bold text-gray-800">
+                <AnimatedNumber value={count} />
+              </span>{" "}
+              th visitor!
             </p>
           )}
         </div>
