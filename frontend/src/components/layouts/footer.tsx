@@ -5,7 +5,7 @@ import { SiGmail } from "react-icons/si";
 import { FaViber } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { Tooltip } from "@radix-ui/themes";
-
+import { AnimatedNumber } from "../shared/ui/animatedNumber";
 import { useVisitorCount } from "@/src/hooks/useVisitorCount";
 
 const getOrdinal = (n: number) => {
@@ -198,11 +198,13 @@ export const Footer = () => {
           <p className="text-sm text-gray-600">
             © {currentYear} Sudip Neupane. All rights reserved.
           </p>
-          <p>
-            {count
-              ? `👋 You are the ${getOrdinal(count)} visitor. Thanks for stopping by!`
-              : "Loading..."}
-          </p>
+
+          {count && (
+            <p className="text-fluid-xs text-gray-600">
+              <span className="inline-block animate-wave">👋</span> You are the{" "}
+              <span className="font-bold text-gray-800"><AnimatedNumber value={count} /></span> th visitor!
+            </p>
+          )}
         </div>
       </div>
     </footer>
