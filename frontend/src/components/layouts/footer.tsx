@@ -1,9 +1,18 @@
+"use client";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { FaViber } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { Tooltip } from "@radix-ui/themes";
+
+import { useVisitorCount } from "@/src/hooks/useVisitorCount";
+
+const getOrdinal = (n) => {
+  const s = ["th", "st", "nd", "rd"];
+  const v = n % 100;
+  return n + (s[(v - 20) % 10] || s[v] || s[0]);
+};
 
 export const CTASection = () => {
   return (
@@ -73,6 +82,7 @@ export const CTASection = () => {
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const count = useVisitorCount();
 
   return (
     <footer className="mt-10 border-t border-gray-200">
@@ -182,16 +192,17 @@ export const Footer = () => {
               </a>
             </div>
           </div>
-
-          </div>
-          {/* Bottom Bar */}
-          <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-600">
-              © {currentYear} Sudip Neupane. All rights reserved.
-            </p>
-            <p className="text-sm text-gray-500">
-              Built with React & Tailwind CSS
-            </p>
+        </div>
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-gray-600">
+            © {currentYear} Sudip Neupane. All rights reserved.
+          </p>
+          <p>
+            {count
+              ? `👋 You are the ${getOrdinal(count)} visitor. Thanks for stopping by!`
+              : "Loading..."}
+          </p>
         </div>
       </div>
     </footer>

@@ -29,7 +29,6 @@ export default function RootLayout({
     <html lang="en" className={cn(inter.variable, spaceGrotesk.variable)}>
       <body>
         <Theme>
-          <Analytics />
           <Navbar />
           <main className="page-wrapper">
             <DesktopPet />

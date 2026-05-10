@@ -87,51 +87,51 @@ export default function IntroSection() {
 
       {/* social links */}
       <div className="flex items-center gap-4 mt-5">
-        <Tooltip content="LinkedIn">
-          <a
-            href="https://www.linkedin.com/in/sudip-neupane/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        <a
+          href="https://www.linkedin.com/in/sudip-neupane/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Tooltip content="LinkedIn">
             <FaLinkedin className="w-5 h-5 text-blue-600" />
-          </a>
-        </Tooltip>
-        <Tooltip content="GitHub">
-          <a
-            href="https://github.com/sudipneupane"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          </Tooltip>
+        </a>
+        <a
+          href="https://github.com/sudipneupane"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Tooltip content="GitHub">
             <FaGithub className="w-5 h-5 text-gray-800" />
-          </a>
-        </Tooltip>
-        <Tooltip content="Gmail">
-          <a
-            href="https://www.gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          </Tooltip>
+        </a>
+        <a
+          href="https://www.gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Tooltip content="Gmail">
             <SiGmail className="w-5 h-5 text-red-500" />
-          </a>
-        </Tooltip>
-        <Tooltip content="Viber">
-          <a
-            href="https://www.viber.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          </Tooltip>
+        </a>
+        <a
+          href="https://www.viber.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Tooltip content="Viber">
             <FaViber className="w-5 h-5 text-blue-500" />
-          </a>
-        </Tooltip>
-        <Tooltip content="WhatsApp">
-          <a
-            href="https://wa.me/yourphonenumber"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          </Tooltip>
+        </a>
+        <a
+          href="https://wa.me/yourphonenumber"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Tooltip content="WhatsApp">
             <FaWhatsapp className="w-5 h-5 text-green-600" />
-          </a>
-        </Tooltip>
+          </Tooltip>
+        </a>
       </div>
 
       <div>
