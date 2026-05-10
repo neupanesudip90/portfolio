@@ -20,7 +20,7 @@ export function useVisitorCount() {
           setCount(data.count);
         }
       } catch (err: any) {
-        console.error("❌ Firebase error:", err.message);
+        console.error("Firebase error:", err.message);
       }
     };
     run();
