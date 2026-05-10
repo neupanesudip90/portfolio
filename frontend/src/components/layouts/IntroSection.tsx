@@ -11,7 +11,7 @@ import { SiGmail } from "react-icons/si";
 import { FaViber } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { Tooltip } from "@radix-ui/themes";
-
+import Marquee from "../shared/ui/marquee";
 
 export default function IntroSection() {
   return (
@@ -74,46 +74,69 @@ export default function IntroSection() {
       </div>
 
       {/* get in touch section */}
-          <div className="flex mt-5">
-              <button className="flex border border-gray-400 text-xs font-medium text-gray-700 px-2 py-1 rounded-lg mt-2 items-center gap-2">
-                  <TiDocumentText className="w-3 h-4 text-gray-800" />
-                  <span className="text-xs">Resume/CV</span>
-              </button>
-              <button className="flex border border-gray-400 text-xs font-medium bg-gray-900 text-gray-200 px-2 py-1 rounded-lg mt-2 items-center gap-2 ml-3">
-                  <FaPaperPlane className="w-3 h-4 text-gray-200" />
-                  <span className="text-xs">Get in Touch</span>
-              </button>
+      <div className="flex mt-5">
+        <button className="flex border border-gray-400 text-xs font-medium text-gray-700 px-2 py-1 rounded-lg mt-2 items-center gap-2">
+          <TiDocumentText className="w-3 h-4 text-gray-800" />
+          <span className="text-xs">Resume/CV</span>
+        </button>
+        <button className="flex border border-gray-400 text-xs font-medium bg-gray-900 text-gray-200 px-2 py-1 rounded-lg mt-2 items-center gap-2 ml-3">
+          <FaPaperPlane className="w-3 h-4 text-gray-200" />
+          <span className="text-xs">Get in Touch</span>
+        </button>
       </div>
 
-          {/* social links */}
-          <div className="flex items-center gap-4 mt-5">
-              <Tooltip content="LinkedIn"  >
-                <a href="https://www.linkedin.com/in/sudip-neupane/" target="_blank" rel="noopener noreferrer">
-                  <FaLinkedin className="w-5 h-5 text-blue-600" />
-                </a>
-              </Tooltip>
-              <Tooltip content="GitHub">
-                <a href="https://github.com/sudipneupane" target="_blank" rel="noopener noreferrer">
-                  <FaGithub className="w-5 h-5 text-gray-800" />
-                </a>
-              </Tooltip>
-              <Tooltip content="Gmail">
-                <a href="https://www.gmail.com" target="_blank" rel="noopener noreferrer">
-                  <SiGmail className="w-5 h-5 text-red-500" />
-                </a>
-              </Tooltip>
-              <Tooltip content="Viber">
-                <a href="https://www.viber.com" target="_blank" rel="noopener noreferrer">
-                  <FaViber className="w-5 h-5 text-blue-500" />
-                </a>
-              </Tooltip>
-              <Tooltip content="WhatsApp">
-                <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer">
-                  <FaWhatsapp className="w-5 h-5 text-green-600" />
-                </a>
-              </Tooltip>
-            </div>
+      {/* social links */}
+      <div className="flex items-center gap-4 mt-5">
+        <Tooltip content="LinkedIn">
+          <a
+            href="https://www.linkedin.com/in/sudip-neupane/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin className="w-5 h-5 text-blue-600" />
+          </a>
+        </Tooltip>
+        <Tooltip content="GitHub">
+          <a
+            href="https://github.com/sudipneupane"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub className="w-5 h-5 text-gray-800" />
+          </a>
+        </Tooltip>
+        <Tooltip content="Gmail">
+          <a
+            href="https://www.gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <SiGmail className="w-5 h-5 text-red-500" />
+          </a>
+        </Tooltip>
+        <Tooltip content="Viber">
+          <a
+            href="https://www.viber.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaViber className="w-5 h-5 text-blue-500" />
+          </a>
+        </Tooltip>
+        <Tooltip content="WhatsApp">
+          <a
+            href="https://wa.me/yourphonenumber"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaWhatsapp className="w-5 h-5 text-green-600" />
+          </a>
+        </Tooltip>
+      </div>
 
+      <div>
+        <Marquee />
+      </div>
     </section>
   );
 }

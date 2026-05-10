@@ -4,6 +4,7 @@ import "./global.css";
 import { Theme } from "@radix-ui/themes";
 import { cn } from "@/src/libs/utils";
 import Navbar from "@/src/components/layouts/Navbar";
+import DesktopPet from "@/src/components/pet/DesktopPet";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const spaceGrotesk = Space_Grotesk({
@@ -27,8 +28,12 @@ export default function RootLayout({
     <html lang="en" className={cn(inter.variable, spaceGrotesk.variable)}>
       <body>
         <Theme>
+         
           <Navbar />
-          <main className="page-wrapper">{children}</main>
+          <main className="page-wrapper">
+            <DesktopPet />
+            {children}
+          </main>
         </Theme>
       </body>
     </html>

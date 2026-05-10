@@ -1,0 +1,122 @@
+.card {
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #daf6f2;
+  box-shadow: 0 0 0.5em rgba(189, 189, 189, 0.5);
+  border: 1px solid rgba(229, 227, 227, 0.6);
+  transition: 0.5s;
+  transform: rotateX(-5deg) rotateY(-5deg) rotateZ(-5deg);
+}
+
+.card:hover {
+  transform: rotate(0deg);
+  opacity: 1;
+}
+
+/* Rotating neon gradient bar */
+.card::before {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 60%;
+  background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+  animation: rotBGimg 8s linear infinite;
+  transition: all 0.2s linear;
+  z-index: 0;
+}
+@keyframes rotBGimg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Inner mask — leaves only a thin glowing border visible */
+.card::after {
+  content: '';
+  position: absolute;
+  background: #fbfbfb;
+  inset: 4px;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.card:hover::before {
+  background-image: linear-gradient(180deg, rgb(81, 255, 0), purple);
+  animation: rotBGimg 3.5s linear infinite;
+}
+
+/* Make sure inner content stays above the ::after mask */
+.card-inner {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+
+.card1 {
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #daf6f2;
+  box-shadow: 0 0 0.5em rgba(189, 189, 189, 0.5);
+  border: 1px solid rgba(229, 227, 227, 0.6);
+  transition: 0.5s;
+  transform: rotateX(-5deg) rotateY(5deg) rotateZ(5deg);
+}
+
+.card1:hover {
+  transform: rotate(0deg);
+  opacity: 1;
+}
+
+/* Rotating neon gradient bar */
+.card1:before {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 60%;
+  background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+  animation: rotBGimg 8s linear infinite;
+  transition: all 0.2s linear;
+  z-index: 0;
+}
+@keyframes rotBGimg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Inner mask — leaves only a thin glowing border visible */
+.card1::after {
+  content: '';
+  position: absolute;
+  background: #fbfbfb;
+  inset: 4px;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.card1:hover::before {
+  background-image: linear-gradient(180deg, rgb(81, 255, 0), purple);
+  animation: rotBGimg 8s linear infinite;
+}
+
+/* Make sure inner content stays above the ::after mask */
+.card1-inner {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
