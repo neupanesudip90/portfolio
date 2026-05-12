@@ -14,6 +14,8 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = React.useState(false);
 
   React.useEffect(() => {
+      setIsScrolled(window.scrollY > 10);
+  
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);

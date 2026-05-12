@@ -3,7 +3,7 @@ import { FcGraduationCap } from "react-icons/fc";
 export default function Education() {
   return (
     <div className="mt-10">
-      <p className="text-fluid-xs uppercase tracking-widest  font-semibold mb-6">
+      <p className="text-fluid-xs text-primary uppercase tracking-widest  font-semibold mb-6">
         education
       </p>
       <div className="flex flex-col gap-3">

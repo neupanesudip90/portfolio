@@ -4,7 +4,7 @@ import { FaGithub } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { FaViber } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
-import { Tooltip } from "@radix-ui/themes";
+import * as Tooltip from "@radix-ui/react-tooltip";
 import { AnimatedNumber } from "../shared/ui/animatedNumber";
 import { useVisitorCount } from "@/src/hooks/useVisitorCount";
 import { MdOutlineDocumentScanner } from "react-icons/md";
@@ -52,7 +52,7 @@ export const CTASection = () => {
             href="https://www.linkedin.com/in/sudipneupane-dev/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-4 py-2 border-2 border-gray-300 text-fluid-sm font-medium rounded-md text-gray-500 bg-white hover:border-purple-600 hover:text-purple-600 transition-all"
+            className="inline-flex items-center justify-center px-4 py-2 border-2 border-gray-300 text-fluid-sm font-medium rounded-md text-gray-700 bg-white hover:border-purple-600 hover:text-purple-600 transition-all"
           >
             <svg
               className="w-5 h-5 mr-2"
@@ -68,7 +68,7 @@ export const CTASection = () => {
             href="/resume"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center  justify-center px-4 py-2 border-2 border-gray-300 text-fluid-sm font-medium rounded-md text-gray-500 bg-white hover:border-purple-600 hover:text-purple-600 transition-all"
+            className="inline-flex items-center  justify-center px-4 py-2 border-2 border-gray-300 text-fluid-sm font-medium rounded-md text-gray-700 bg-white hover:border-purple-600 hover:text-purple-600 transition-all"
           >
             <MdOutlineDocumentScanner className="w-5 h-5 mr-2" />
             View My Resume
@@ -81,13 +81,43 @@ export const CTASection = () => {
             href="mailto:sudip@example.com"
             className="text-purple-600 hover:text-purple-700 font-medium"
           >
-           neupanesudip90@gmmail.com
+            neupanesudip90@gmmail.com
           </a>
         </p>
       </div>
     </section>
   );
 };
+
+function SocialLink({
+  href,
+  label,
+  icon,
+}: {
+  href: string;
+  label: string;
+  icon: React.ReactNode;
+}) {
+  return (
+    <Tooltip.Root>
+      <Tooltip.Trigger asChild>
+        <a href={href} target="_blank" rel="noopener noreferrer">
+          {icon}
+        </a>
+      </Tooltip.Trigger>
+      <Tooltip.Portal>
+        <Tooltip.Content
+          side="top"
+          sideOffset={6}
+          className="bg-gray-900 text-white text-xs px-2 py-1 rounded shadow-md z-50"
+        >
+          {label}
+          <Tooltip.Arrow className="fill-gray-900" />
+        </Tooltip.Content>
+      </Tooltip.Portal>
+    </Tooltip.Root>
+  );
+}
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -123,26 +153,18 @@ export const Footer = () => {
             <ul className="space-y-2 text-fluid-xs">
               <li>
                 <a
-                  href="#about"
+                  href="/resume"
                   className="text-secondary hover:text-purple-600  scale-100 hover:scale-120 transform-gpu transition-transform duration-300"
                 >
-                  About
+                  Resume
                 </a>
               </li>
               <li>
                 <a
-                  href="#projects"
+                  href="/projects"
                   className="text-secondary hover:text-purple-600  scale-100 hover:scale-120 transform-gpu transition-transform duration-300"
                 >
                   Projects
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#experience"
-                  className="text-secondary hover:text-purple-600  scale-100 hover:scale-120 transform-gpu transition-transform duration-300"
-                >
-                  Experience
                 </a>
               </li>
             </ul>
@@ -153,67 +175,32 @@ export const Footer = () => {
             <h4 className="text-fluid-md font-semibold text-primary mb-3">
               Connect with me
             </h4>
-            <div className="flex space-x-4">
-              <a
-                href="https://github.com/neupanesudip90"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-black  scale-100 hover:scale-120 transform-gpu transition-transform duration-300 "
-              >
-                <Tooltip content="GitHub" side="top" sideOffset={5}>
-                  <FaGithub className="w-7 h-7" />
-                </Tooltip>
-              </a>
-              <a
+            <div className="flex items-center gap-4 mt-5">
+              <SocialLink
                 href="https://www.linkedin.com/in/sudipneupane-dev/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-blue-700 scale-100 hover:scale-120 transform-gpu transition-transform duration-300 "
-              >
-                <Tooltip content="LinkedIn" side="top" sideOffset={5}>
-                  <FaLinkedin className="w-7 h-7" />
-                </Tooltip>
-              </a>
-              <a
+                label="LinkedIn"
+                icon={<FaLinkedin className="w-5 h-5 text-blue-500" />}
+              />
+              <SocialLink
+                href="https://github.com/neupanesudip90"
+                label="GitHub"
+                icon={<FaGithub className="w-5 h-5 text-gray-500" />}
+              />
+              <SocialLink
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=neupanesudip90@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-red-600  scale-100 hover:scale-120 transform-gpu transition-transform duration-300"
-              >
-                <Tooltip content="Gmail" side="top" sideOffset={5}>
-                  <SiGmail className="w-7 h-7" />
-                </Tooltip>
-              </a>
-              <a
+                label="Gmail"
+                icon={<SiGmail className="w-5 h-5 text-red-500" />}
+              />
+              <SocialLink
                 href="viber://chat?number=%2B9779810268020"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-purple-900  scale-100 hover:scale-120 transform-gpu transition-transform duration-300"
-              >
-                <Tooltip content="Viber" side="top" sideOffset={5}>
-                  <FaViber className="w-7 h-7" />
-                </Tooltip>
-              </a>
-              <a
+                label="Viber"
+                icon={<FaViber className="w-5 h-5 text-purple-700" />}
+              />
+              <SocialLink
                 href="https://wa.me/9866270227"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-green-500  scale-100 hover:scale-120 transform-gpu transition-transform duration-300"
-              >
-                <Tooltip content="WhatsApp" side="top" sideOffset={5}>
-                  <FaWhatsapp className="w-7 h-7" />
-                </Tooltip>
-              </a>
-            </div>
-            <div>
-              <p className="text-secondary text-fluid-sm mt-4 text-center">
-                Open to Work
-              </p>
-              <p className="text-secondary text-fluid-sm text-center">
-                🟢 Available <br />
-                📍 Kathmandu,Nepal
-              </p>
-              <p></p>
+                label="WhatsApp"
+                icon={<FaWhatsapp className="w-5 h-5 text-green-600" />}
+              />
             </div>
           </div>
         </div>

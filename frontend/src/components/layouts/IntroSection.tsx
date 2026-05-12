@@ -11,9 +11,40 @@ import { FaGithub } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { FaViber } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
-import { Tooltip } from "@radix-ui/themes";
 import Marquee from "../shared/ui/marquee";
 import { TypeAnimation } from "react-type-animation";
+import * as Tooltip from "@radix-ui/react-tooltip";
+
+function SocialLink({
+  href,
+  label,
+  icon,
+}: {
+  href: string;
+  label: string;
+  icon: React.ReactNode;
+}) {
+  return (
+    <Tooltip.Root>
+      <Tooltip.Trigger asChild>
+        <a href={href} target="_blank" rel="noopener noreferrer">
+          {icon}
+        </a>
+      </Tooltip.Trigger>
+      <Tooltip.Portal>
+        <Tooltip.Content
+          side="top"
+          sideOffset={6}
+          className="bg-gray-900 text-white text-xs px-2 py-1 rounded shadow-md z-50"
+        >
+          {label}
+          <Tooltip.Arrow className="fill-gray-900" />
+        </Tooltip.Content>
+      </Tooltip.Portal>
+    </Tooltip.Root>
+  );
+}
+
 
 export default function IntroSection() {
   return (
@@ -50,7 +81,7 @@ export default function IntroSection() {
               1000,
             ]}
             speed={50}
-            style={{ fontSize: "1.25em" }}
+            style={{ fontSize: "clamp(1rem, 2.5vw, 1.25rem)" }}
             repeat={Infinity}
           />
         </div>
@@ -102,51 +133,31 @@ export default function IntroSection() {
 
       {/* social links */}
       <div className="flex items-center gap-4 mt-5">
-        <a
+        <SocialLink
           href="https://www.linkedin.com/in/sudipneupane-dev/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Tooltip content="LinkedIn">
-            <FaLinkedin className="w-5 h-5 text-blue-500" />
-          </Tooltip>
-        </a>
-        <a
+          label="LinkedIn"
+          icon={<FaLinkedin className="w-5 h-5 text-blue-500" />}
+        />
+        <SocialLink
           href="https://github.com/neupanesudip90"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Tooltip content="GitHub">
-            <FaGithub className="w-5 h-5 text-gray-500" />
-          </Tooltip>
-        </a>
-        <a
+          label="GitHub"
+          icon={<FaGithub className="w-5 h-5 text-gray-500" />}
+        />
+        <SocialLink
           href="https://mail.google.com/mail/?view=cm&fs=1&to=neupanesudip90@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer" //this 
-        >
-          <Tooltip content="Gmail">
-            <SiGmail className="w-5 h-5 text-red-500" />
-          </Tooltip>
-        </a>
-        <a
+          label="Gmail"
+          icon={<SiGmail className="w-5 h-5 text-red-500" />}
+        />
+        <SocialLink
           href="viber://chat?number=%2B9779810268020"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Tooltip content="Viber">
-            <FaViber className="w-5 h-5 text-purple-700" />
-          </Tooltip>
-        </a>
-        <a
+          label="Viber"
+          icon={<FaViber className="w-5 h-5 text-purple-700" />}
+        />
+        <SocialLink
           href="https://wa.me/9866270227"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Tooltip content="WhatsApp">
-            <FaWhatsapp className="w-5 h-5 text-green-600" />
-          </Tooltip>
-        </a>
+          label="WhatsApp"
+          icon={<FaWhatsapp className="w-5 h-5 text-green-600" />}
+        />
       </div>
 
       <div>

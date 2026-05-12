@@ -57,48 +57,66 @@ export function Card1({
     <div className="card1">
       <div className="card1-inner  w-full h-full flex flex-col items-center p-1 ">
         <div className="bg-bg-card rounded-xl ">
-        <Image
-          src={image}
-          alt={title}
-          width={800}
-          height={600}
-          className="rounded-t-2xl"
-        />
+          <Image
+            src={image}
+            alt={title}
+            width={800}
+            height={600}
+            className="rounded-t-2xl"
+          />
 
-        <div className="flex flex-row items-center justify-between w-full px-4 py-3">
-          <p className="text-fluid-sm font-bold text-left text-secondary">
-            {title}
-          </p>
+          <div className="flex flex-row items-center justify-between w-full px-4 py-3">
+            <p className="text-fluid-sm font-bold text-left text-secondary">
+              {title}
+            </p>
 
-          <div className="gap-3 text-fluid-xs font-medium text-secondary flex">
-            <Link href={hostingLinks} target="_blank" rel="noopener noreferrer">
-              <CiGlobe className="w-4 h-4" />
-            </Link>
-            <Link href={githubLinks} target="_blank" rel="noopener noreferrer">
-              <FaGithub className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-        <div>
-          <p className="text-fluid-xs  px-4 font-medium text-secondary text-justify tracking-tight leading-relaxed">
-            {description}
-          </p>
-        </div>
-        <div className="w-full flex-cols justify-start px-4 mb-5 mt-1 gap-3">
-          <p className="text-secondary font-bold text-fluid-xs">Technologies:</p>
-          <div className="flex  gap-3 ">
-            {skills.map((skill) => (
-              <div
-                key={skill.name}
-                className="flex items-end gap-1 py-1 cursor-pointer text-fluid-xs "
+            <div className="gap-3 text-fluid-xs font-medium text-secondary flex">
+              <Link
+                href={hostingLinks}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                {skill.icon}
-              </div>
-            ))}
+                <CiGlobe className="w-4 h-4" />
+              </Link>
+              <Link
+                href={githubLinks}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+          <div>
+            <p className="text-fluid-xs  px-4 font-medium text-secondary text-justify tracking-tight leading-relaxed">
+              {description}
+            </p>
+          </div>
+          <div className="px-4 flex justify-end">
+            <a
+              href="/projects"
+              className="text-fluid-xs text-secondary border border-gray-300 rounded-md px-3 py-1  font-medium hover:bg-gray-900 hover:text-secondary transition-colors duration-300"
+            >
+              View Details
+            </a>
+          </div>
+          <div className="w-full flex-cols justify-start px-4 mb-5 mt-1 gap-3">
+            <p className="text-secondary font-bold text-fluid-xs">
+              Technologies:
+            </p>
+            <div className="flex  gap-3 ">
+              {skills.map((skill) => (
+                <div
+                  key={skill.name}
+                  className="flex items-end gap-1 py-1 cursor-pointer text-fluid-xs "
+                >
+                  {skill.icon}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-        </div>
-        </div>
+      </div>
     </div>
   );
 }

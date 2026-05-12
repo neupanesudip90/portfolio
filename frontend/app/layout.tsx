@@ -4,14 +4,13 @@ import { cn } from "@/src/libs/utils";
 import Navbar from "@/src/components/layouts/Navbar";
 import DesktopPet from "@/src/components/pet/DesktopPet";
 import { Providers } from "@/src/components/provider/providers";
-import {Footer, CTASection } from "@/src/components/layouts/footer";
+import { Footer, CTASection } from "@/src/components/layouts/footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space-grotesk",
 });
-
 
 export default function RootLayout({
   children,
@@ -32,8 +31,10 @@ export default function RootLayout({
                 try {
                   var saved = localStorage.getItem('theme');
                   var system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                  var theme = saved || system;
-                  if (theme === 'dark') document.documentElement.classList.add('dark');
+                  var resolved = saved || system;
+                  if (resolved === 'dark') {
+                    document.documentElement.classList.add('dark');
+                  }
                 } catch(e) {}
               })();
             `,
@@ -43,11 +44,11 @@ export default function RootLayout({
       <body className="bg-bg-page text-primary transition-colors duration-200 antialiased">
         <Providers>
           <main className="page-wrapper">
-          <Navbar />
+            <Navbar />
             <DesktopPet />
             {children}
-          <CTASection />
-          <Footer />
+            <CTASection />
+            <Footer />
           </main>
         </Providers>
       </body>

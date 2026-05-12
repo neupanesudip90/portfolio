@@ -7,9 +7,8 @@ import { FaNodeJs } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
 import { BiLogoTypescript, BiLogoPostgresql } from "react-icons/bi";
 import { FaGithub } from "react-icons/fa";
-import { SiExpressdotcom } from "react-icons/si";
-import { SiPostman } from "react-icons/si";
 import { CiGlobe } from "react-icons/ci";
+import { SiExpressdotcom } from "react-icons/si";
 
 export function Card({
   image,
@@ -56,7 +55,7 @@ export function Card({
   return (
     <div className="card">
       <div className="card-inner  w-full h-full flex flex-col items-center p-1 ">
-        <div className="bg-bg-card rounded-xl ">
+        <div className="bg-bg-page rounded-xl ">
           <Image
             src={image}
             alt={title}
@@ -91,6 +90,14 @@ export function Card({
             <p className="text-fluid-xs  px-4 font-medium text-secondary text-justify tracking-tight leading-relaxed">
               {description}
             </p>
+          </div>
+          <div className="px-4 flex justify-end">
+            <a
+              href="/projects"
+              className="text-fluid-xs text-secondary border border-gray-300 rounded-md px-3 py-1  font-medium hover:bg-gray-900 hover:text-secondary transition-colors duration-300"
+            >
+              View Details
+            </a>
           </div>
           <div className="w-full flex-cols justify-start px-4 mb-5 mt-1 gap-3">
             <p className="text-secondary font-bold text-fluid-xs">
