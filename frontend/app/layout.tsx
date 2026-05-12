@@ -1,11 +1,9 @@
-//importing fonts
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./global.css";
-import { Theme } from "@radix-ui/themes";
 import { cn } from "@/src/libs/utils";
 import Navbar from "@/src/components/layouts/Navbar";
 import DesktopPet from "@/src/components/pet/DesktopPet";
-import { Analytics } from "@vercel/analytics/react";
+import { Providers } from "@/src/components/provider/providers";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const spaceGrotesk = Space_Grotesk({
@@ -26,15 +24,35 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={cn(inter.variable, spaceGrotesk.variable)}>
-      <body>
-        <Theme>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn(inter.variable, spaceGrotesk.variable)}
+    >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var saved = localStorage.getItem('theme');
+                  var system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                  var theme = saved || system;
+                  if (theme === 'dark') document.documentElement.classList.add('dark');
+                } catch(e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body className="bg-bg-page text-primary transition-colors duration-200 antialiased">
+        <Providers>
           <Navbar />
           <main className="page-wrapper">
             <DesktopPet />
             {children}
           </main>
-        </Theme>
+        </Providers>
       </body>
     </html>
   );

@@ -55,7 +55,8 @@ export function Card1({
 
   return (
     <div className="card1">
-      <div className="card1-inner w-full h-full flex flex-col items-center p-1 rounded-lg">
+      <div className="card1-inner  w-full h-full flex flex-col items-center p-1 ">
+        <div className="bg-bg-card rounded-xl ">
         <Image
           src={image}
           alt={title}
@@ -65,11 +66,11 @@ export function Card1({
         />
 
         <div className="flex flex-row items-center justify-between w-full px-4 py-3">
-          <p className="text-fluid-sm font-bold text-left text-gray-800">
+          <p className="text-fluid-sm font-bold text-left text-secondary">
             {title}
           </p>
 
-          <div className="gap-3 text-fluid-xs font-medium text-gray-900 flex">
+          <div className="gap-3 text-fluid-xs font-medium text-secondary flex">
             <Link href={hostingLinks} target="_blank" rel="noopener noreferrer">
               <CiGlobe className="w-4 h-4" />
             </Link>
@@ -79,12 +80,12 @@ export function Card1({
           </div>
         </div>
         <div>
-          <p className="text-fluid-xs  px-4 font-medium text-[#323232] text-justify tracking-tight leading-relaxed">
+          <p className="text-fluid-xs  px-4 font-medium text-secondary text-justify tracking-tight leading-relaxed">
             {description}
           </p>
         </div>
         <div className="w-full flex-cols justify-start px-4 mb-5 mt-1 gap-3">
-          <p className="text-gray-500 font-bold text-fluid-xs">Technologies:</p>
+          <p className="text-secondary font-bold text-fluid-xs">Technologies:</p>
           <div className="flex  gap-3 ">
             {skills.map((skill) => (
               <div
@@ -96,7 +97,8 @@ export function Card1({
             ))}
           </div>
         </div>
-      </div>
+        </div>
+        </div>
     </div>
   );
 }

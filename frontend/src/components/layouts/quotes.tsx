@@ -102,17 +102,17 @@ export default function Quotes() {
 
   return (
     <div className="mt-10">
-      <p className="text-fluid-xs uppercase tracking-widest text-gray-500 font-semibold mb-6">
+      <p className="text-fluid-xs uppercase tracking-widest text-primary font-semibold mb-6">
         Quote of the day
       </p>
       <div className="flex items-start gap-4 border-2 border-gray-200 rounded-lg p-4">
         <Quote className="w-6 h-6 text-blue-500 mt-1 shrink-0" />
         <div>
-          <p className="text-fluid-md font-medium text-gray-700 italic" dangerouslySetInnerHTML={{ __html: quoteHTML }} />
-          <p className="text-fluid-xs text-right text-gray-500 mt-2">
+          <p className="text-fluid-md font-medium text-secondary italic" dangerouslySetInnerHTML={{ __html: quoteHTML }} />
+          <p className="text-fluid-xs text-right text-secondary mt-2">
             — {q.author}
             {q.source && (
-              <span className="ml-1 not-italic text-gray-400">
+              <span className="ml-1 not-italic text-secondary">
                 · {q.source}
               </span>
             )}

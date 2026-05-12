@@ -26,10 +26,10 @@ export default function IntroSection() {
           className="rounded-full object-cover"
         />
         <div>
-          <p className="text-fluid-4xl font-bold text-gray-800">
+          <p className="text-fluid-4xl font-bold text-primary ">
             Sudip Neupane
           </p>
-          <p className="text-fluid-xs text-gray-500">
+          <p className="text-fluid-sm text-secondary tracking-tight leading-snug">
             Engineer | Full-Stack Developer | Explorer
           </p>
         </div>
@@ -37,36 +37,36 @@ export default function IntroSection() {
 
       {/* intro */}
       <div className="mt-4">
-        <p className="text-fluid-xl py-2">
+        <p className="text-fluid-xl py-2 text-secondary">
           Hi! I'm Sudip —{" "}
-          <span className="font-bold text-gray-500">
+          <span className="font-bold text-primary">
             A Full-Stack Developer.
           </span>
         </p>
-        <p className="text-xs text-gray-500 text-justify tracking-tight leading-relaxed">
+        <p className="text-fluid-sm text-secondary text-justify tracking-tight leading-relaxed">
           I design and build scalable full-stack applications —{" "}
-          <span className="inline-flex items-center gap-1 border font-medium border-gray-300 px-2  rounded-xl bg-gray-200">
-            <FaReact className="text-blue-500 w-4 h-4" /> React
+          <span className="inline-flex items-center justify-end gap-1 font-medium ">
+            <FaReact className="text-blue-500 w-3 h-3" /> React
           </span>{" "}
-          and{" "}
-          <span className="inline-flex items-center gap-1 border font-medium border-gray-300 px-2  rounded-xl bg-gray-200">
-            <RiNextjsFill className="text-gray-800 w-4 h-4" /> Next.js
+          /{" "}
+          <span className="inline-flex items-center justify-end gap-1 font-medium ">
+            <RiNextjsFill className="text-gray-800 w-3 h-3" /> Next.js
           </span>{" "}
           on the front,{" "}
-          <span className="inline-flex items-center gap-1 border font-medium border-gray-300 px-2  rounded-xl bg-gray-200">
-            <FaNodeJs className="text-green-500 w-4 h-4  " /> Node.js
+          <span className="inline-flex items-center justify-end gap-1 font-medium ">
+            <FaNodeJs className="text-green-500 w-3 h-3  " /> Node.js
           </span>
           ,{" "}
-          <span className="inline-flex items-center gap-1 border font-medium border-gray-300 px-2  rounded-xl bg-gray-200">
-            <BiLogoTypescript className="text-blue-600 w-4 h-4" /> TypeScript
+          <span className="inline-flex items-center justify-end gap-1 font-medium ">
+            <BiLogoTypescript className="text-blue-600 w-3 h-3" /> TypeScript
           </span>
           , and{" "}
-          <span className="inline-flex items-center gap-1 border font-medium border-gray-300 px-2  rounded-xl bg-gray-200">
-            <BiLogoPostgresql className="text-blue-700 w-4 h-4" /> PostgreSQL
+          <span className="inline-flex items-center justify-end gap-1 font-medium ">
+            <BiLogoPostgresql className="text-blue-700 w-3 h-3" /> PostgreSQL
           </span>{" "}
           on the back, all shipped inside{" "}
-          <span className="inline-flex items-center gap-1 border font-medium border-gray-300 px-2  rounded-xl bg-gray-200">
-            <FaDocker className="text-blue-400 w-4 h-4" /> Docker
+          <span className="inline-flex items-center justify-end gap-1 font-medium ">
+            <FaDocker className="text-blue-400 w-3 h-3" /> Docker
           </span>
           . I focus on writing code that's easy to maintain, fast to run, and
           doesn't wake you up at 3am.
@@ -75,11 +75,11 @@ export default function IntroSection() {
 
       {/* get in touch section */}
       <div className="flex mt-5">
-        <button className="flex border border-gray-400 text-xs font-medium text-gray-700 px-2 py-1 rounded-lg mt-2 items-center gap-2">
-          <TiDocumentText className="w-3 h-4 text-gray-800" />
-          <span className="text-xs">Resume/CV</span>
+        <button className="flex border border-gray-400 text-fluid-xs font-medium text-gray-700 px-2 py-1 rounded-lg mt-2 items-center gap-2">
+          <TiDocumentText className="w-3 h-4 text-secondary" />
+          <span className="text-fluid-xs text-secondary">Resume/CV</span>
         </button>
-        <button className="flex border border-gray-400 text-xs font-medium bg-gray-900 text-gray-200 px-2 py-1 rounded-lg mt-2 items-center gap-2 ml-3">
+        <button className="flex border border-gray-400 text-fluid-xs font-medium bg-gray-900 text-gray-200 px-2 py-1 rounded-lg mt-2 items-center gap-2 ml-3">
           <FaPaperPlane className="w-3 h-4 text-gray-200" />
           <span className="text-xs">Get in Touch</span>
         </button>
@@ -93,7 +93,7 @@ export default function IntroSection() {
           rel="noopener noreferrer"
         >
           <Tooltip content="LinkedIn">
-            <FaLinkedin className="w-5 h-5 text-blue-600" />
+            <FaLinkedin className="w-5 h-5 text-blue-500" />
           </Tooltip>
         </a>
         <a
@@ -102,7 +102,7 @@ export default function IntroSection() {
           rel="noopener noreferrer"
         >
           <Tooltip content="GitHub">
-            <FaGithub className="w-5 h-5 text-gray-800" />
+            <FaGithub className="w-5 h-5 text-gray-500" />
           </Tooltip>
         </a>
         <a
@@ -120,7 +120,7 @@ export default function IntroSection() {
           rel="noopener noreferrer"
         >
           <Tooltip content="Viber">
-            <FaViber className="w-5 h-5 text-blue-500" />
+            <FaViber className="w-5 h-5 text-purple-700" />
           </Tooltip>
         </a>
         <a

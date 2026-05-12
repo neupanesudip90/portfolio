@@ -7,22 +7,19 @@ import { FaWhatsapp } from "react-icons/fa";
 import { Tooltip } from "@radix-ui/themes";
 import { AnimatedNumber } from "../shared/ui/animatedNumber";
 import { useVisitorCount } from "@/src/hooks/useVisitorCount";
-
-const getOrdinal = (n: number) => {
-  const s = ["th", "st", "nd", "rd"];
-  const v = n % 100;
-  return n + (s[(v - 20) % 10] || s[v] || s[0]);
-};
+import { MdOutlineDocumentScanner } from "react-icons/md";
+import chiyaImage from "@/public/chiya.png";
+import Image from "next/image";
 
 export const CTASection = () => {
   return (
     <section className="mt-10">
       <div className="max-w-3xl mx-auto text-center space-y-8">
         <div>
-          <h2 className="text-fluid-xl font-bold text-gray-700 mb-4">
+          <h2 className="text-fluid-xl font-bold text-primary mb-4">
             Interested in working together?
           </h2>
-          <p className="text-gray-500 text-fluid-md font-medium">
+          <p className="text-secondary text-fluid-md font-medium">
             I'm always interested in hearing about new projects and
             opportunities.
           </p>
@@ -53,7 +50,7 @@ export const CTASection = () => {
             href="https://linkedin.com/in/sudipneupane"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-4 py-2 border-2 border-gray-300 text-fluid-sm font-medium rounded-md text-gray-700 bg-white hover:border-purple-600 hover:text-purple-600 transition-all"
+            className="inline-flex items-center justify-center px-4 py-2 border-2 border-gray-300 text-fluid-sm font-medium rounded-md text-gray-500 bg-white hover:border-purple-600 hover:text-purple-600 transition-all"
           >
             <svg
               className="w-5 h-5 mr-2"
@@ -64,9 +61,19 @@ export const CTASection = () => {
             </svg>
             Connect on LinkedIn
           </a>
+
+          <a
+            href="https://linkedin.com/in/sudipneupane"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center  justify-center px-4 py-2 border-2 border-gray-300 text-fluid-sm font-medium rounded-md text-gray-500 bg-white hover:border-purple-600 hover:text-purple-600 transition-all"
+          >
+            <MdOutlineDocumentScanner className="w-5 h-5 mr-2" />
+            View My Resume
+          </a>
         </div>
 
-        <p className="text-fluid-sm text-gray-500">
+        <p className="text-fluid-sm text-secondary">
           Or email me directly at{" "}
           <a
             href="mailto:sudip@example.com"
@@ -90,21 +97,32 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-2">
-            <h3 className="text-xl font-bold text-gray-900">Sudip Neupane</h3>
-            <p className="text-gray-600 text-sm">
-              Full-Stack Developer building scalable applications that don't
-              wake you up at 3am.
+            <h3 className="text-xl font-bold text-primary">Sudip Neupane</h3>
+            <p className="text-secondary text-fluid-sm ">
+              Open to opportunities, Closed to bad{" "}
+              <span >
+                <Image
+                  src={chiyaImage.src}
+                  alt="Chiya"
+                  width={60}
+                  height={60}
+                  className="inline-block animate-wave"
+                />
+              </span>
+              tea/coffee.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-gray-900 mb-3">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 className="text-flud-md font-semibold text-primary mb-3">
+              Quick Links
+            </h4>
+            <ul className="space-y-2 text-fluid-xs">
               <li>
                 <a
                   href="#about"
-                  className="text-gray-600 hover:text-purple-600  scale-100 hover:scale-120 transform-gpu transition-transform duration-300"
+                  className="text-secondary hover:text-purple-600  scale-100 hover:scale-120 transform-gpu transition-transform duration-300"
                 >
                   About
                 </a>
@@ -112,7 +130,7 @@ export const Footer = () => {
               <li>
                 <a
                   href="#projects"
-                  className="text-gray-600 hover:text-purple-600  scale-100 hover:scale-120 transform-gpu transition-transform duration-300"
+                  className="text-secondary hover:text-purple-600  scale-100 hover:scale-120 transform-gpu transition-transform duration-300"
                 >
                   Projects
                 </a>
@@ -120,7 +138,7 @@ export const Footer = () => {
               <li>
                 <a
                   href="#experience"
-                  className="text-gray-600 hover:text-purple-600  scale-100 hover:scale-120 transform-gpu transition-transform duration-300"
+                  className="text-secondary hover:text-purple-600  scale-100 hover:scale-120 transform-gpu transition-transform duration-300"
                 >
                   Experience
                 </a>
@@ -128,7 +146,7 @@ export const Footer = () => {
               <li>
                 <a
                   href="/resume.pdf"
-                  className="text-gray-600 hover:text-purple-600  scale-100 hover:scale-120 transform-gpu transition-transform duration-300"
+                  className="text-secondary hover:text-purple-600  scale-100 hover:scale-120 transform-gpu transition-transform duration-300"
                 >
                   Resume
                 </a>
@@ -138,7 +156,7 @@ export const Footer = () => {
 
           {/* social media links */}
           <div>
-            <h4 className="font-semibold text-gray-900 mb-3">
+            <h4 className="text-fluid-md font-semibold text-primary mb-3">
               Connect with me
             </h4>
             <div className="flex space-x-4">
@@ -191,18 +209,26 @@ export const Footer = () => {
                 </Tooltip>
               </a>
             </div>
+            <div>
+              <p className="text-secondary text-fluid-sm mt-4 text-center">Open to Work</p>
+              <p className="text-secondary text-fluid-sm text-center">
+                🟢 Available <br />
+                📍 Kathmandu,Nepal
+              </p>
+              <p></p>
+            </div>
           </div>
         </div>
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-primary">
             © {currentYear} Sudip Neupane. All rights reserved.
           </p>
 
           {count && (
-            <p className="text-fluid-sm text-gray-600">
+            <p className="text-fluid-sm text-secondary">
               <span className="inline-block animate-wave ">👋</span> You are the{" "}
-              <span className="font-bold text-gray-800">
+              <span className="font-bold text-primary">
                 <AnimatedNumber value={count} />
               </span>{" "}
               th visitor!

@@ -34,7 +34,7 @@ export default function Experience() {
 
   return (
     <div>
-      <p className="text-fluid-xs uppercase tracking-widest text-gray-500 font-semibold mb-4">
+      <p className="text-fluid-xs uppercase tracking-widest text-primary font-semibold mb-4">
         experience
       </p>
       <div className="flex items-center justify-between">
@@ -48,28 +48,28 @@ export default function Experience() {
             />
           </div>
           <div>
-            <p className="text-fluid-base font-semibold text-gray-700">
+            <p className="text-fluid-base font-semibold text-primary">
               Mindrisers Technology
             </p>
-            <p className="text-fluid-xs font-medium text-gray-500">
+            <p className="text-fluid-xs font-medium text-secondary">
               Full Stack Developer Intern
             </p>
           </div>
         </div>
-        <div className="text-fluid-xs font-medium text-right text-gray-500">
+        <div className="text-fluid-xs font-medium text-right text-secondary">
           <p>Jun 2023 - Aug 2023</p>
           <p>Kathmandu, Nepal (on-site)</p>
         </div>
       </div>
       <div>
-        <p className="mt-4 text-sm text-gray-700 font-semibold">
+        <p className="mt-4 text-sm text-secondary font-semibold">
           Technologies & Tools:
         </p>
         <div className="flex items-center gap-4 mt-2 flex-wrap">
           {skills.map((skill) => (
             <div
               key={skill.name}
-              className="flex items-center gap-1 cursor-pointer text-fluid-xs text-gray-500 border border-gray-300 px-2 py-1 rounded-lg"
+              className="flex items-center gap-1 cursor-pointer text-fluid-xs text-secondary border border-gray-300 px-2 py-1 rounded-lg"
             >
               {skill.icon}
               {skill.name}
@@ -78,7 +78,7 @@ export default function Experience() {
         </div>
       </div>
       <div>
-        <ul className="list-disc list-outside mt-4 text-fluid-xs text-gray-500 text-justify tracking-tight leading-relaxed">
+        <ul className="list-disc list-outside mt-4 text-fluid-xs text-secondary text-justify tracking-tight leading-relaxed">
           <li>
             Built an admin dashboard with login and role-based access where
             admins could add new users, edit their details, and control what

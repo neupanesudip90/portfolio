@@ -4,7 +4,7 @@ import { Card1 } from "../shared/card1";
 export default function Projects() {
   return (
     <div className="mt-10">
-      <p className="text-fluid-xs uppercase tracking-widest text-gray-500 font-semibold mb-6">
+      <p className="text-fluid-xs uppercase tracking-widest text-primary font-semibold mb-6">
         projects
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-15">

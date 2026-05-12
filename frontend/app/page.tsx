@@ -6,7 +6,7 @@ import Quotes from "@/src/components/layouts/quotes";
 import {CTASection, Footer} from "@/src/components/layouts/footer";
 export default function Home() {
   return (
-    <div>
+    <div className="bg-">
       <main>
         <IntroSection />
         <Experience />

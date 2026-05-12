@@ -79,7 +79,7 @@ export default function Marquee() {
   }: {
     tech: { name: string; icon: React.ReactNode };
   }) => (
-    <div className="flex items-center gap-2 mx-2 px-4 py-1 rounded-xl bg-white shadow-sm border border-gray-100">
+    <div className="flex bg-gray-200 items-center gap-2 mx-2 px-4 py-1 rounded-xl bg-page shadow-sm border border-gray-100">
       {tech.icon}
       <span className="text-xs font-medium text-gray-700 whitespace-nowrap">
         {tech.name}
@@ -114,7 +114,7 @@ export default function Marquee() {
         }
       `}</style>
 
-      <section className="bg-white py-10 overflow-hidden">
+      <section className="py-10 overflow-hidden">
         <div className="mb-2 text-left">
           <p className="text-fluid-xs uppercase tracking-widest text-gray-500 font-semibold mb-6">
             Tech Stack
@@ -124,8 +124,8 @@ export default function Marquee() {
         {/* Row 1 — left to right */}
         <div className="overflow-hidden mb-4 relative">
           {/* fade edges */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-linear-to-r from-white to-transparent z-10" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-linear-to-l from-white to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-24  z-10" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 z-10" />
 
           <div className="animate-marquee-left">
             {[...row1, ...row1].map((tech, i) => (
@@ -136,8 +136,8 @@ export default function Marquee() {
 
         {/* Row 2 — right to left */}
         <div className="overflow-hidden relative">
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-linear-to-r from-white to-transparent z-10" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-linear-to-l from-white to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-24  z-10" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 z-10" />
 
           <div className="animate-marquee-right">
             {[...row2, ...row2].map((tech, i) => (
