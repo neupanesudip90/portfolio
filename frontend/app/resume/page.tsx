@@ -99,7 +99,7 @@ export const metadata = {
 
 const RESUME_URL = "/resume.pdf";
 const GOOGLE_DOCS_VIEWER = `https://docs.google.com/viewer?url=${encodeURIComponent(
-  "https://yourdomain.com/resume.pdf",
+  "https://sudipneupane.com/resume.pdf"  // ← your actual deployed URL
 )}&embedded=true`;
 
 export default function Resume() {
@@ -121,7 +121,7 @@ export default function Resume() {
           href={RESUME_URL}
           download="Sudip_Neupane_Resume.pdf"
           className="flex items-center gap-2 px-5 py-2.5 border border-border rounded-lg text-primary 
-                     text-sm font-medium hover:opacity-90 transition-all duration-200 
+                     text-fluid-sm font-medium hover:opacity-90 transition-all duration-200 
                      active:scale-95 shadow-sm"
         >
           <Download className="w-4 h-4" />
@@ -132,7 +132,7 @@ export default function Resume() {
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 px-5 py-2.5 text-primary rounded-lg border border-border
-                     text-sm font-medium hover:bg-bg-hover transition-all duration-200 active:scale-95"
+                     text-fluid-sm font-medium hover:bg-bg-hover transition-all duration-200 active:scale-95"
         >
           <ExternalLink className="w-4 h-4" />
           Open in Tab
