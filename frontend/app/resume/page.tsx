@@ -99,7 +99,7 @@ export const metadata = {
 
 const RESUME_URL = "/resume.pdf";
 const GOOGLE_DOCS_VIEWER = `https://docs.google.com/viewer?url=${encodeURIComponent(
-  "https://sudipneupane.com/resume.pdf"  // ← your actual deployed URL
+  "https://sudipneupane01.com/resume.pdf", // ← your actual deployed URL
 )}&embedded=true`;
 
 export default function Resume() {
