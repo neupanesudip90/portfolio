@@ -6,7 +6,6 @@ import { Search } from "lucide-react";
 
 const navlinks = [
   { name: "Home", href: "/" },
-  { name: "Works", href: "/works" },
   { name: "Projects", href: "/projects" },
   { name: "Resume", href: "/resume" },
 ];

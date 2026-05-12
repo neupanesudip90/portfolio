@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import profile from "@/public/profile.jpg";
 import { FaReact, FaNodeJs, FaDocker } from "react-icons/fa";
@@ -12,6 +13,7 @@ import { FaViber } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { Tooltip } from "@radix-ui/themes";
 import Marquee from "../shared/ui/marquee";
+import { TypeAnimation } from "react-type-animation";
 
 export default function IntroSection() {
   return (
@@ -37,12 +39,24 @@ export default function IntroSection() {
 
       {/* intro */}
       <div className="mt-4">
-        <p className="text-fluid-xl py-2 text-secondary">
-          Hi! I'm Sudip —{" "}
-          <span className="font-bold text-primary">
-            A Full-Stack Developer.
-          </span>
-        </p>
+        <div>
+          <TypeAnimation
+            preRenderFirstString={true}
+            sequence={[
+              500,
+              "Hi ! I am Sudip - FULL STACK DEVELOPER.", // initially rendered starting point
+              1000,
+              "Hi ! I am Sudip - I BUILD WEB APPS.",
+              1000,
+              "Hi ! I am Sudip - I BUILD SCALABLE WEB APPS.",
+              1000,
+            ]}
+            speed={50}
+            style={{ fontSize: "1.25em" }}
+            repeat={Infinity}
+          />
+        </div>
+
         <p className="text-fluid-sm text-secondary text-justify tracking-tight leading-relaxed">
           I design and build scalable full-stack applications —{" "}
           <span className="inline-flex items-center justify-end gap-1 font-medium ">

@@ -4,6 +4,7 @@ import { cn } from "@/src/libs/utils";
 import Navbar from "@/src/components/layouts/Navbar";
 import DesktopPet from "@/src/components/pet/DesktopPet";
 import { Providers } from "@/src/components/provider/providers";
+import {Footer, CTASection } from "@/src/components/layouts/footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const spaceGrotesk = Space_Grotesk({
@@ -47,10 +48,12 @@ export default function RootLayout({
       </head>
       <body className="bg-bg-page text-primary transition-colors duration-200 antialiased">
         <Providers>
-          <Navbar />
           <main className="page-wrapper">
+          <Navbar />
             <DesktopPet />
             {children}
+          <CTASection />
+          <Footer />
           </main>
         </Providers>
       </body>

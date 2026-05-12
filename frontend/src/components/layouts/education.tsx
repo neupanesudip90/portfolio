@@ -24,19 +24,7 @@ export default function Education() {
           </div>
           <p className="text-fluid-xs font-medium text-secondary">2021 - 2025</p>
         </div>
-        <div className="flex justify-between items-center">
-          <div className="flex items-center gap-4">
-            <FcGraduationCap className="w-6 h-6" />
-            <div>
-              <p className="text-sm font-medium text-secondary">High School</p>
-              <p className="text-fluid-xs text-secondary">
-                Southwestern State College
-              </p>
-              <p className="text-fluid-xs text-secondary">Kathmandu, Nepal</p>
-            </div>
-          </div>
-          <p className="text-fluid-xs font-medium text-secondary">2018 - 2020</p>
-        </div>
+       
       </div>
     </div>
   );
