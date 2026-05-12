@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import profile from "@/public/profile.jpg";
+import profile from "@/public/favicon.png";
 import { FaReact, FaNodeJs, FaDocker } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
 import { BiLogoTypescript, BiLogoPostgresql } from "react-icons/bi";
@@ -89,10 +89,10 @@ export default function IntroSection() {
 
       {/* get in touch section */}
       <div className="flex mt-5">
-        <button className="flex border border-gray-400 text-fluid-xs font-medium text-gray-700 px-2 py-1 rounded-lg mt-2 items-center gap-2">
+        <a href="/resume" className="flex border border-gray-400 text-fluid-xs font-medium text-gray-700 px-2 py-1 rounded-lg mt-2 items-center gap-2">
           <TiDocumentText className="w-3 h-4 text-secondary" />
           <span className="text-fluid-xs text-secondary">Resume/CV</span>
-        </button>
+        </a>
         <button className="flex border border-gray-400 text-fluid-xs font-medium bg-gray-900 text-gray-200 px-2 py-1 rounded-lg mt-2 items-center gap-2 ml-3">
           <FaPaperPlane className="w-3 h-4 text-gray-200" />
           <span className="text-xs">Get in Touch</span>

@@ -13,8 +13,11 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata = {
-  title: "My Portfolio",
+  title: "Sudip Neupane Portfolio",
   description: "A showcase of my work and projects.",
+  icons: {
+    icon:"/favicon.png",
+  },
   keywords:
     "portfolio, projects, works, resume, web development, software engineering",
 };
