@@ -1,18 +1,26 @@
-"use client";
-import { useTheme } from "@/src/components/provider/providers";
 import { Download, ExternalLink, FileText } from "lucide-react";
 
+export const metadata = {
+  title: "Resume - Sudip Neupane",
+  description: "Download or view my resume.",
+  icons: {
+    icon: "/favicon.png",
+  },
+  keywords:
+    "resume, download resume, view resume, sudip neupane resume, software engineer resume",
+};
+
 export default function Resume() {
-  const { theme } = useTheme();
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center bg-bg-page ">
-      
       {/* Header */}
       <div className="text-center mb-3">
         <div className="flex items-center justify-center gap-2 mb-3">
           <FileText className="w-6 h-6 text-primary" />
-          <h1 className="text-xl text-primary font-bold tracking-tight">Resume</h1>
+          <h1 className="text-xl text-primary font-bold tracking-tight">
+            Resume
+          </h1>
         </div>
       </div>
 

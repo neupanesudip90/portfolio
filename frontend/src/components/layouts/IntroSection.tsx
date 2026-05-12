@@ -48,8 +48,6 @@ export default function IntroSection() {
               1000,
               "Hi ! I am Sudip - I BUILD WEB APPS.",
               1000,
-              "Hi ! I am Sudip - I BUILD SCALABLE WEB APPS.",
-              1000,
             ]}
             speed={50}
             style={{ fontSize: "1.25em" }}
@@ -89,7 +87,10 @@ export default function IntroSection() {
 
       {/* get in touch section */}
       <div className="flex mt-5">
-        <a href="/resume" className="flex border border-gray-400 text-fluid-xs font-medium text-gray-700 px-2 py-1 rounded-lg mt-2 items-center gap-2">
+        <a
+          href="/resume"
+          className="flex border border-gray-400 text-fluid-xs font-medium text-gray-700 px-2 py-1 rounded-lg mt-2 items-center gap-2"
+        >
           <TiDocumentText className="w-3 h-4 text-secondary" />
           <span className="text-fluid-xs text-secondary">Resume/CV</span>
         </a>
@@ -102,7 +103,7 @@ export default function IntroSection() {
       {/* social links */}
       <div className="flex items-center gap-4 mt-5">
         <a
-          href="https://www.linkedin.com/in/sudip-neupane/"
+          href="https://www.linkedin.com/in/sudipneupane-dev/"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -111,7 +112,7 @@ export default function IntroSection() {
           </Tooltip>
         </a>
         <a
-          href="https://github.com/sudipneupane"
+          href="https://github.com/neupanesudip90"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -120,16 +121,16 @@ export default function IntroSection() {
           </Tooltip>
         </a>
         <a
-          href="https://www.gmail.com"
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=neupanesudip90@gmail.com"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener noreferrer" //this 
         >
           <Tooltip content="Gmail">
             <SiGmail className="w-5 h-5 text-red-500" />
           </Tooltip>
         </a>
         <a
-          href="https://www.viber.com"
+          href="viber://chat?number=%2B9779810268020"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -138,7 +139,7 @@ export default function IntroSection() {
           </Tooltip>
         </a>
         <a
-          href="https://wa.me/yourphonenumber"
+          href="https://wa.me/9866270227"
           target="_blank"
           rel="noopener noreferrer"
         >

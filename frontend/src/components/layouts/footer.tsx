@@ -27,7 +27,9 @@ export const CTASection = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="mailto:sudip@example.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=neupanesudip90@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-4 py-2 border-2 border-gray-300 text-fluid-sm font-medium rounded-md text-gray-700 bg-white hover:border-purple-600 hover:text-purple-600 transition-all"
           >
             <svg
@@ -47,7 +49,7 @@ export const CTASection = () => {
           </a>
 
           <a
-            href="https://linkedin.com/in/sudipneupane"
+            href="https://www.linkedin.com/in/sudipneupane-dev/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-4 py-2 border-2 border-gray-300 text-fluid-sm font-medium rounded-md text-gray-500 bg-white hover:border-purple-600 hover:text-purple-600 transition-all"
@@ -63,7 +65,7 @@ export const CTASection = () => {
           </a>
 
           <a
-            href="https://linkedin.com/in/sudipneupane"
+            href="/resume"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center  justify-center px-4 py-2 border-2 border-gray-300 text-fluid-sm font-medium rounded-md text-gray-500 bg-white hover:border-purple-600 hover:text-purple-600 transition-all"
@@ -79,7 +81,7 @@ export const CTASection = () => {
             href="mailto:sudip@example.com"
             className="text-purple-600 hover:text-purple-700 font-medium"
           >
-            sudip@example.com
+           neupanesudip90@gmmail.com
           </a>
         </p>
       </div>
@@ -100,7 +102,7 @@ export const Footer = () => {
             <h3 className="text-xl font-bold text-primary">Sudip Neupane</h3>
             <p className="text-secondary text-fluid-sm ">
               Open to opportunities, Closed to bad{" "}
-              <span >
+              <span>
                 <Image
                   src={chiyaImage.src}
                   alt="Chiya"
@@ -143,14 +145,6 @@ export const Footer = () => {
                   Experience
                 </a>
               </li>
-              <li>
-                <a
-                  href="/resume.pdf"
-                  className="text-secondary hover:text-purple-600  scale-100 hover:scale-120 transform-gpu transition-transform duration-300"
-                >
-                  Resume
-                </a>
-              </li>
             </ul>
           </div>
 
@@ -161,7 +155,7 @@ export const Footer = () => {
             </h4>
             <div className="flex space-x-4">
               <a
-                href="https://github.com/sudipneupane"
+                href="https://github.com/neupanesudip90"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-black  scale-100 hover:scale-120 transform-gpu transition-transform duration-300 "
@@ -171,7 +165,7 @@ export const Footer = () => {
                 </Tooltip>
               </a>
               <a
-                href="https://linkedin.com/in/sudipneupane"
+                href="https://www.linkedin.com/in/sudipneupane-dev/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-blue-700 scale-100 hover:scale-120 transform-gpu transition-transform duration-300 "
@@ -181,7 +175,9 @@ export const Footer = () => {
                 </Tooltip>
               </a>
               <a
-                href="mailto:sudip@example.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=neupanesudip90@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-600 hover:text-red-600  scale-100 hover:scale-120 transform-gpu transition-transform duration-300"
               >
                 <Tooltip content="Gmail" side="top" sideOffset={5}>
@@ -189,7 +185,7 @@ export const Footer = () => {
                 </Tooltip>
               </a>
               <a
-                href="https://www.viber.com"
+                href="viber://chat?number=%2B9779810268020"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-purple-900  scale-100 hover:scale-120 transform-gpu transition-transform duration-300"
@@ -199,7 +195,7 @@ export const Footer = () => {
                 </Tooltip>
               </a>
               <a
-                href="https://wa.me/yourphonenumber"
+                href="https://wa.me/9866270227"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-green-500  scale-100 hover:scale-120 transform-gpu transition-transform duration-300"
@@ -210,7 +206,9 @@ export const Footer = () => {
               </a>
             </div>
             <div>
-              <p className="text-secondary text-fluid-sm mt-4 text-center">Open to Work</p>
+              <p className="text-secondary text-fluid-sm mt-4 text-center">
+                Open to Work
+              </p>
               <p className="text-secondary text-fluid-sm text-center">
                 🟢 Available <br />
                 📍 Kathmandu,Nepal

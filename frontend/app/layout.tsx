@@ -12,15 +12,6 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
 });
 
-export const metadata = {
-  title: "Sudip Neupane Portfolio",
-  description: "A showcase of my work and projects.",
-  icons: {
-    icon:"/favicon.png",
-  },
-  keywords:
-    "portfolio, projects, works, resume, web development, software engineering",
-};
 
 export default function RootLayout({
   children,
