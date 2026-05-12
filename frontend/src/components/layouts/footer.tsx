@@ -131,7 +131,7 @@ export const Footer = () => {
           <div className="space-y-2">
             <h3 className="text-xl font-bold text-primary">Sudip Neupane</h3>
             <p className="text-secondary text-fluid-sm ">
-              Open to opportunities, Closed to bad{" "}
+              Open to opportunities, Closed to bad
               <span>
                 <Image
                   src={chiyaImage.src}
