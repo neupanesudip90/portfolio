@@ -170,3 +170,7 @@ body {
   transform-origin: 70% 70%;
   display: inline-block;
 }
+
+html {
+  scroll-behavior: smooth;
+}

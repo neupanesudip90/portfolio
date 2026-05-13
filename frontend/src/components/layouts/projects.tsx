@@ -7,7 +7,7 @@ export default function Projects() {
       <p className="text-fluid-xs uppercase tracking-widest text-primary font-semibold mb-6">
         projects
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-15">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <Card
           image="/homepage.png"
           title="Mock API"

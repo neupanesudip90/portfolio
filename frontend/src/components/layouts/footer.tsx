@@ -2,8 +2,6 @@
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
-import { FaViber } from "react-icons/fa";
-import { FaWhatsapp } from "react-icons/fa";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import { AnimatedNumber } from "../shared/ui/animatedNumber";
 import { useVisitorCount } from "@/src/hooks/useVisitorCount";
@@ -11,79 +9,211 @@ import { MdOutlineDocumentScanner } from "react-icons/md";
 import chiyaImage from "@/public/chiya.png";
 import Image from "next/image";
 
+import { useRef, useEffect, useState } from "react";
+import emailjs from "@emailjs/browser";
+
+import { FaLinkedinIn } from "react-icons/fa";
+import { Mail, Send, User, MessageSquare } from "lucide-react";
+
 export const CTASection = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+  const isMounted = useRef(true);
+
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState("");
+
+  useEffect(() => {
+    return () => {
+      isMounted.current = false;
+    };
+  }, []);
+
+  const sendEmail = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+
+    setLoading(true);
+    setStatus("");
+
+    // Debug: Log env vars (remove in production)
+    console.log("EmailJS Config:", {
+      serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+        ? "✓ Set"
+        : "✗ Missing",
+      templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+        ? "✓ Set"
+        : "✗ Missing",
+      publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        ? "✓ Set"
+        : "✗ Missing",
+    });
+
+    const formData = new FormData(formRef.current);
+    const user_name = formData.get("user_name") as string;
+    const user_email = formData.get("user_email") as string;
+    const message = formData.get("message") as string;
+
+    try {
+      // Admin email
+      const adminResult = await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        formRef.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+      );
+      console.log("Admin email sent:", adminResult);
+
+      // Auto reply
+      const autoReplyResult = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_AUTO_REPLY_TEMPLATE_ID!,
+        {
+          user_name,
+          user_email,
+          message,
+          time: new Date().toLocaleString(), // Add timestamp variable
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+      );
+      console.log("Auto-reply sent:", autoReplyResult);
+
+      if (isMounted.current) {
+        setStatus(
+          "Message sent successfully 🚀 Check your inbox for confirmation.",
+        );
+        formRef.current.reset();
+      }
+    } catch (error: any) {
+      console.error("EmailJS Error:", {
+        text: error?.text,
+        status: error?.status,
+        message: error?.message,
+      });
+
+      if (isMounted.current) {
+        setStatus(error?.text || "Failed to send message. Please try again.");
+      }
+    } finally {
+      if (isMounted.current) setLoading(false);
+    }
+  };
+
   return (
-    <section className="mt-10">
-      <div className="max-w-3xl mx-auto text-center space-y-8">
-        <div>
-          <h2 className="text-fluid-xl font-bold text-primary mb-4">
+    <section id="contact" className="mt-10 px-4 sm:px-6 lg:px-8 scroll-mt-24">
+      <div className="mt-5">
+        {/* Header */}
+        <div className="text-center space-y-4">
+          <h2 className="text-fluid-xl font-bold text-primary">
             Interested in working together?
           </h2>
-          <p className="text-secondary text-fluid-md font-medium">
-            I'm always interested in hearing about new projects and
-            opportunities.
+          <p className="text-secondary text-fluid-sm leading-relaxed">
+            I’m always open to exciting projects, freelance opportunities,
+            collaborations, or meaningful tech conversations.
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=neupanesudip90@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-4 py-2 border-2 border-gray-300 text-fluid-sm font-medium rounded-md text-gray-700 bg-white hover:border-purple-600 hover:text-purple-600 transition-all"
-          >
-            <svg
-              className="w-5 h-5 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-              />
-            </svg>
-            Send me an Email
-          </a>
-
+        {/* Quick Links */}
+        <div className="flex flex-col sm:flex-row flex-wrap py-5 gap-6 justify-center">
           <a
             href="https://www.linkedin.com/in/sudipneupane-dev/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-4 py-2 border-2 border-gray-300 text-fluid-sm font-medium rounded-md text-gray-700 bg-white hover:border-purple-600 hover:text-purple-600 transition-all"
+            className="inline-flex items-center justify-center px-5 py-2 rounded-xl border border-border bg-bg-page text-fluid-sm text-primary font-medium hover:border-purple-500 hover:text-purple-500 transition-all"
           >
-            <svg
-              className="w-5 h-5 mr-2"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-            </svg>
-            Connect on LinkedIn
+            <FaLinkedinIn className="w-4 h-4 mr-2" />
+            LinkedIn
           </a>
 
           <a
             href="/resume"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center  justify-center px-4 py-2 border-2 border-gray-300 text-fluid-sm font-medium rounded-md text-gray-700 bg-white hover:border-purple-600 hover:text-purple-600 transition-all"
+            className="inline-flex items-center justify-center px-5 py-2 rounded-xl border border-border bg-bg-page text-fluid-sm text-primary font-medium hover:border-purple-500 hover:text-purple-500 transition-all"
           >
             <MdOutlineDocumentScanner className="w-5 h-5 mr-2" />
-            View My Resume
+            View Resume
           </a>
         </div>
 
-        <p className="text-fluid-sm text-secondary">
-          Or email me directly at{" "}
-          <a
-            href="mailto:sudip@example.com"
-            className="text-purple-600 hover:text-purple-700 font-medium"
-          >
-            neupanesudip90@gmmail.com
-          </a>
-        </p>
+        {/* Form */}
+        <div className="w-full backdrop-blur-lg border border-border rounded-3xl shadow-xl p-5 sm:p-10">
+          <div className="text-center mb-8">
+            <h3 className="text-fluid-lg font-semibold text-primary mb-2">
+              Send Me a Message
+            </h3>
+            <p className="text-fluid-sm text-secondary">
+              Fill out the form below and I’ll get back to you soon.
+            </p>
+          </div>
+
+          <form ref={formRef} onSubmit={sendEmail} className="space-y-4">
+            {/* Name */}
+            <div>
+              <label className="text-fluid-xs text-secondary mb-2 block">
+                Your Name
+              </label>
+              <div className="flex items-center rounded-xl border border-border px-4 py-3 focus-within:border-purple-500 transition">
+                <User className="w-4 h-4 mr-3 text-secondary" />
+                <input
+                  type="text"
+                  name="user_name"
+                  required
+                  placeholder="Enter your full name"
+                  className="w-full bg-transparent outline-none text-fluid-sm text-primary placeholder:text-secondary"
+                />
+              </div>
+            </div>
+
+            {/* Email */}
+            <div>
+              <label className="text-fluid-sm text-secondary mb-2 block">
+                Your Email
+              </label>
+              <div className="flex items-center rounded-xl border border-border px-4 py-3 focus-within:border-purple-500 transition">
+                <Mail className="w-4 h-4 mr-3 text-secondary" />
+                <input
+                  type="email"
+                  name="user_email"
+                  required
+                  placeholder="Enter your email"
+                  className="w-full bg-transparent outline-none text-fluid-sm text-primary placeholder:text-secondary"
+                />
+              </div>
+            </div>
+
+            {/* Message */}
+            <div>
+              <label className="text-fluid-sm text-secondary mb-2 block">
+                Project Details / Message
+              </label>
+              <div className="flex rounded-xl border border-border px-4 py-3 focus-within:border-purple-500 transition">
+                <MessageSquare className="w-4 h-4 mr-3 mt-1 text-secondary" />
+                <textarea
+                  name="message"
+                  rows={4}
+                  required
+                  placeholder="Tell me about your project, idea, or opportunity..."
+                  className="w-full bg-transparent outline-none text-fluid-sm text-primary placeholder:text-secondary resize-none"
+                />
+              </div>
+            </div>
+
+            {/* Submit */}
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full inline-flex items-center justify-center border border-gray-300 rounded-xl bg-bg-page text-fluid-sm text-primary py-2 mt-3 font-semibold hover:border-purple-500 transition-all cursor-pointer"
+            >
+              {loading ? "Sending..." : "Send Message"}
+              <Send className="w-4 h-4 ml-2" />
+            </button>
+
+            {/* Status */}
+            {status && (
+              <p className="text-center text-fluid-sm text-secondary mt-2">
+                {status}
+              </p>
+            )}
+          </form>
+        </div>
       </div>
     </section>
   );
@@ -190,16 +320,6 @@ export const Footer = () => {
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=neupanesudip90@gmail.com"
                 label="Gmail"
                 icon={<SiGmail className="w-5 h-5 text-red-500" />}
-              />
-              <SocialLink
-                href="viber://chat?number=%2B9779810268020"
-                label="Viber"
-                icon={<FaViber className="w-5 h-5 text-purple-700" />}
-              />
-              <SocialLink
-                href="https://wa.me/9866270227"
-                label="WhatsApp"
-                icon={<FaWhatsapp className="w-5 h-5 text-green-600" />}
               />
             </div>
           </div>

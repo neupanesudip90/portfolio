@@ -24,7 +24,9 @@ export default function Education() {
           </div>
           <p className="text-fluid-xs font-medium text-secondary">2021 - 2025</p>
         </div>
-       
+        <p className="text-fluid-xs italic text-secondary">
+         <span><b>Relevant Coursework:</b> Data Structures and Algorithms, Database Management, Software Engineering, Computer Networks, Operating Systems, Web Technology, Distributed Systems and others.</span>
+        </p>
       </div>
     </div>
   );

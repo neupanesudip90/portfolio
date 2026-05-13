@@ -9,8 +9,6 @@ import { FaPaperPlane } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
-import { FaViber } from "react-icons/fa";
-import { FaWhatsapp } from "react-icons/fa";
 import Marquee from "../shared/ui/marquee";
 import { TypeAnimation } from "react-type-animation";
 import * as Tooltip from "@radix-ui/react-tooltip";
@@ -125,10 +123,7 @@ export default function IntroSection() {
           <TiDocumentText className="w-3 h-4 text-secondary" />
           <span className="text-fluid-xs text-secondary">Resume/CV</span>
         </a>
-        <button className="flex border border-gray-400 text-fluid-xs font-medium bg-gray-900 text-gray-200 px-2 py-1 rounded-lg mt-2 items-center gap-2 ml-3">
-          <FaPaperPlane className="w-3 h-4 text-gray-200" />
-          <span className="text-xs">Get in Touch</span>
-        </button>
+        
       </div>
 
       {/* social links */}
@@ -147,16 +142,6 @@ export default function IntroSection() {
           href="https://mail.google.com/mail/?view=cm&fs=1&to=neupanesudip90@gmail.com"
           label="Gmail"
           icon={<SiGmail className="w-5 h-5 text-red-500" />}
-        />
-        <SocialLink
-          href="viber://chat?number=%2B9779810268020"
-          label="Viber"
-          icon={<FaViber className="w-5 h-5 text-purple-700" />}
-        />
-        <SocialLink
-          href="https://wa.me/9866270227"
-          label="WhatsApp"
-          icon={<FaWhatsapp className="w-5 h-5 text-green-600" />}
         />
       </div>
 

@@ -9,7 +9,7 @@
   box-shadow: 0 0 0.5em rgba(189, 189, 189, 0.5);
   border: 1px solid rgba(229, 227, 227, 0.6);
   transition: 0.5s;
-  transform: rotateX(-5deg) rotateY(-5deg) rotateZ(-5deg);
+  transform: rotateX(-1deg) rotateY(-2deg) rotateZ(0deg);
 }
 
 .card:hover {
@@ -74,7 +74,7 @@
   box-shadow: 0 0 0.5em rgba(189, 189, 189, 0.5);
   border: 1px solid rgba(229, 227, 227, 0.6);
   transition: 0.5s;
-  transform: rotateX(-5deg) rotateY(5deg) rotateZ(5deg);
+  transform: rotateX(-1deg) rotateY(1deg) rotateZ(0deg);
 }
 
 .card1:hover {

@@ -55,7 +55,7 @@ export function Card({
   return (
     <div className="card">
       <div className="card-inner  w-full h-full flex flex-col items-center p-1 ">
-        <div className="bg-bg-page rounded-xl ">
+        <div className="bg-bg-page rounded-2xl ">
           <Image
             src={image}
             alt={title}
@@ -91,7 +91,7 @@ export function Card({
               {description}
             </p>
           </div>
-          <div className="px-4 py-1 flex justify-end">
+          <div className="px-4 py-3 flex justify-end">
             <a
               href="/projects"
               className="text-fluid-xs text-secondary border border-gray-300 rounded-md px-3 py-1  font-medium hover:bg-gray-900 hover:text-secondary transition-colors duration-300"

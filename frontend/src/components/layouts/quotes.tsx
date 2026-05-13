@@ -105,7 +105,7 @@ export default function Quotes() {
       <p className="text-fluid-xs uppercase tracking-widest text-primary font-semibold mb-6">
         Quote of the day
       </p>
-      <div className="flex items-start gap-4 border-2 border-gray-200 rounded-lg p-4">
+      <div className="flex items-start  gap-4 border-2 border-gray-200 rounded-lg p-4">
         <Quote className="w-6 h-6 text-blue-500 mt-1 shrink-0" />
         <div>
           <p className="text-fluid-md font-medium text-secondary italic" dangerouslySetInnerHTML={{ __html: quoteHTML }} />
