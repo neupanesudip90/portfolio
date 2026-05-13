@@ -327,7 +327,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-primary">
-            © {currentYear} Sudip Neupane. All rights reserved.
+            © {currentYear} hi@sudipneupane01.com.np
           </p>
 
           {count && (
@@ -336,7 +336,7 @@ export const Footer = () => {
               <span className="font-bold text-primary">
                 <AnimatedNumber value={count} />
               </span>{" "}
-              th visitor!, thanks for stopping by!
+              th visitor!thanks for stopping by!
             </p>
           )}
         </div>

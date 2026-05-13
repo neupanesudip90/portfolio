@@ -61,7 +61,7 @@ export default function IntroSection() {
             Sudip Neupane
           </p>
           <p className="text-fluid-sm text-secondary tracking-tight leading-snug">
-            Engineer | Full-Stack Developer | Explorer
+            Engineer | Full-Stack Developer | hi@sudipneupane01.com.np
           </p>
         </div>
       </div>
@@ -123,7 +123,6 @@ export default function IntroSection() {
           <TiDocumentText className="w-3 h-4 text-secondary" />
           <span className="text-fluid-xs text-secondary">Resume/CV</span>
         </a>
-        
       </div>
 
       {/* social links */}
@@ -139,7 +138,7 @@ export default function IntroSection() {
           icon={<FaGithub className="w-5 h-5 text-gray-500" />}
         />
         <SocialLink
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=neupanesudip90@gmail.com"
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=hi@sudipneupane01.com.np"
           label="Gmail"
           icon={<SiGmail className="w-5 h-5 text-red-500" />}
         />
