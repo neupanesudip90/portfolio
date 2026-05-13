@@ -336,7 +336,7 @@ export const Footer = () => {
               <span className="font-bold text-primary">
                 <AnimatedNumber value={count} />
               </span>{" "}
-              th visitor!thanks for stopping by!
+              th visitor!,thanks for stopping by!
             </p>
           )}
         </div>
