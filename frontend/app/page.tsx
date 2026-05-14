@@ -2,7 +2,7 @@ import IntroSection from "@/src/components/layouts/IntroSection";
 import Experience from "@/src/components/layouts/experience";
 import Projects from "@/src/components/layouts/projects";
 import Education from "@/src/components/layouts/education";
-import Quotes from "@/src/components/layouts/quotes";
+
 
 
 export const metadata = {
@@ -24,7 +24,7 @@ export default function Home() {
         <Experience />
         <Projects />
         <Education />
-        <Quotes />
+     
       </main>
     </div>
   );

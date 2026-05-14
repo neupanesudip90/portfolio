@@ -5,6 +5,7 @@ import Navbar from "@/src/components/layouts/Navbar";
 import DesktopPet from "@/src/components/pet/DesktopPet";
 import { Providers } from "@/src/components/provider/providers";
 import { Footer, CTASection } from "@/src/components/layouts/footer";
+import Quotes from "@/src/components/layouts/quotes";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const spaceGrotesk = Space_Grotesk({
@@ -48,6 +49,7 @@ export default function RootLayout({
             <DesktopPet />
             {children}
             <CTASection />
+               <Quotes />
             <Footer />
           </main>
         </Providers>
