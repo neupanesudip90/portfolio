@@ -7,13 +7,13 @@ import { CiGlobe } from "react-icons/ci";
 
 interface ProjectsCardProps {
   title: string;
-  problem: string; // one-liner: what problem it solves
-  description: string; // fuller explanation shown when expanded
+  problem: string; 
+  description: string; 
   image: string;
   liveDemo: string;
   githubLink: string;
   features: string[];
-  tech: string[]; // tech stack as pills
+  tech: string[]; 
 }
 
 export const ProjectsCard = ({
